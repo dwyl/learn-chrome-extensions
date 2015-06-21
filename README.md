@@ -29,14 +29,21 @@ In 2014 Chromebooks accounted for 14 percent of all laptop sales for both
 the commercial and retail channels; up 85 percent from 2013.
 http://betanews.com/2015/02/24/2015-is-year-of-the-chromebook/
 
+Chrome Extensions (*or "Apps"*) allow you to create in-browser tools
+which add functionality to the browsing experience.
+In our case we want to let the person
+
 
 ## Background Reading / Watching
 
 ### Videos
 
 + Google Chrome Extensions: How to build an extension
-(Google Developers official): https://www.youtube.com/watch?v=e3McMaHvlBY
+(Google Developers official):   
+https://www.youtube.com/watch?v=e3McMaHvlBY
 (from 2009 but all the info is still valid)
++ Building Your First Chrome Extension:
+https://www.youtube.com/watch?v=pT-b2SpFIWo
 
 ### Guides
 
@@ -44,6 +51,8 @@ http://betanews.com/2015/02/24/2015-is-year-of-the-chromebook/
 
 ### Articles
 
++ Everything You Need To Know About Browser Extensions:
+http://www.howtogeek.com/169080/beginner-geek-everything-you-need-to-know-about-browser-extensions/
 + What percentage of Internet users use browser extensions?
 https://www.quora.com/What-percentage-of-Internet-users-use-browser-extensions
 in 2010 33% of Chrome Users had extensions.
