@@ -33,6 +33,11 @@ Chrome Extensions (*or "Apps"*) allow you to create in-browser tools
 which add functionality to the browsing experience.
 In our case we want to let the person
 
+## *How*?
+
+<br />
+<br />
+
 
 ## Background Reading / Watching
 
@@ -47,6 +52,13 @@ https://www.youtube.com/watch?v=pT-b2SpFIWo
 
 ### Guides
 
++ Getting Started: Building a Chrome Extension: https://developer.chrome.com/extensions/getstarted
++ How to Create a Chrome Extension in 10 Minutes Flat:
+http://www.sitepoint.com/create-chrome-extension-10-minutes-flat/
++ How to Build a Chrome Extension:
+http://lifehacker.com/5857721/how-to-build-a-chrome-extension
++ Developing Google Chrome Extensions:
+http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076
 + Publishing Your App: https://developer.chrome.com/webstore/publish
 
 ### Articles
