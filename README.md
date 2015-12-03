@@ -1,24 +1,10 @@
-# learn-chrome-extensions
+# Learn How to Build Chrome Extensions
 
 ## Why?
 
 Chrome Extensions are a *whole other* ***world of opportunity***
 to build web-enabled tools!
 
-
-### Background
-
-Yesterday at the
-[***Conservation Hackathon***](http://conservationhackathon.org)
-my *idea* was to build a Chrome Extension to help Scientists track the articles
-they have viewed and let other members of their team know that an article has
-already been reviewed thus reducing duplication of effort.
-While we *started* creating the extension during the Hackathon, see:
-https://github.com/ConsHack/article-search-chrome-plugin
-it rapidly became clear that we were *way* out of our comfort zone - despite
-the fact that extensions are built with "just" HTML, CSS & JavaScript ... -
-and would need to do a bit of *homework* if we are to attempt this sort
-of project again in the future.
 
 ## What?
 
@@ -41,10 +27,19 @@ In our case we want to let the person
 
 ## Background Reading / Watching
 
+### Browser Action (When the person clicks on the Extension Icon)
+
+Browser Actions allow you to add an icon to the browser e.g:
+![browser action](https://developer.chrome.com/static/images/browser-action.png)
+See: https://developer.chrome.com/extensions/browserAction
+
+Example of a simple Browser Action is an icon which, when clicked
+alters the page background. see: examples/make_page_red
+
 ### Videos
 
 + Google Chrome Extensions: How to build an extension
-(Google Developers official):   
+(Google Developers official):
 https://www.youtube.com/watch?v=e3McMaHvlBY
 (from 2009 but all the info is still valid)
 + Building Your First Chrome Extension:
@@ -52,7 +47,8 @@ https://www.youtube.com/watch?v=pT-b2SpFIWo
 
 ### Guides
 
-+ Getting Started: Building a Chrome Extension: https://developer.chrome.com/extensions/getstarted
++ Getting Started: Building a Chrome Extension:
+https://developer.chrome.com/extensions/getstarted
 + How to Create a Chrome Extension in 10 Minutes Flat:
 http://www.sitepoint.com/create-chrome-extension-10-minutes-flat/
 + How to Build a Chrome Extension:
