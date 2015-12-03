@@ -48,6 +48,16 @@ when they click on the icon (`browser_action`)
 
 See: examples/my_bookmarks
 
+### Change the `src` of Icon when clicked
+
+Imagine your app wants to change the icon in response to an event or a notification:
+That's quite easy with the following line:
+```js
+chrome.browserAction.setIcon({path:"icon-notification.png"});
+```
+
+see: examples/set_icon_path
+
 <br />
 <br />
 
