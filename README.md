@@ -21,11 +21,13 @@ In our case we want to let the person
 
 ## *How*?
 
-<br />
-<br />
+
+## Permissions
+
++ What are the permissions? https://developer.chrome.com/extensions/permissions
 
 
-## Background Reading / Watching
+## *Examples*
 
 ### Browser Action (When the person clicks on the Extension Icon)
 
@@ -34,7 +36,41 @@ Browser Actions allow you to add an icon to the browser e.g:
 See: https://developer.chrome.com/extensions/browserAction
 
 Example of a simple Browser Action is an icon which, when clicked
-alters the page background. see: examples/make_page_red
+alters the page background.
+See: examples/make_page_red
+
+### Display list of Bookmarks
+
+Uses the bookmarks API to show a list of the person's bookmarks
+when they click on the icon (`browser_action`)
+
+![chrome-extension-bookmarks-viewer](https://cloud.githubusercontent.com/assets/194400/11568030/e4a1eba8-99e1-11e5-83a3-cf7709a10ed0.png)
+
+See: examples/my_bookmarks
+
+<br />
+<br />
+
+## Questions?
+
+**Q**: Can we have ***both*** `page_action` ***and*** `browser_action` ?  
+**A**: No. But you can create multiple extensions and have them inter-communicate
+see: http://stackoverflow.com/questions/14519458/google-chrome-extension-browser-page-action
+and: https://developer.chrome.com/extensions/extension#event-onMessageExternal
+
+**Q**: How can we check when the Tab/Page has finished loading?  
+**A**: Add an event listener:
+```js
+chrome.tabs.onUpdated.addListener(function(tabId , info) {
+    if (info.status == "complete") {
+        // your code ...
+    }
+});
+```
+http://stackoverflow.com/questions/2149917/chrome-extensions-how-to-know-when-a-tab-has-finished-loading-from-the-backgr
+
+## Background Reading / Watching
+
 
 ### Videos
 
@@ -75,3 +111,6 @@ http://digiwonk.wonderhowto.com/how-to/your-chrome-extensions-may-be-stealing-yo
 http://www.howtogeek.com/180175/warning-your-browser-extensions-are-spying-on-you/
 + Google Chrome Privacy Whitepaper:
 https://www.google.co.uk/chrome/browser/privacy/whitepaper.html
++ So you want to build a chrome extension:
+https://blog.hartleybrody.com/chrome-extension/ (*BuzzKill example* by @hartleybrody)
++ What are Chrome Apps? https://developer.chrome.com/apps/about_apps (*they're awesome*!)
