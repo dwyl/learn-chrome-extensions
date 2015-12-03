@@ -58,6 +58,17 @@ chrome.browserAction.setIcon({path:"icon-notification.png"});
 
 see: examples/set_icon_path
 
+### Access Browser Data (*Delete History*)
+
+Use the `chrome.browsingData` API to remove browsing data from a user's local profile.
+
+![browsingdata_api](https://cloud.githubusercontent.com/assets/194400/11569180/62dc7956-99e8-11e5-8c1c-15be80af7590.png)
+
+The API only allows you to `erase` history, so its only useful for a *limited*
+set of applications.
+
+see: https://developer.chrome.com/extensions/browsingData
+
 <br />
 <br />
 
