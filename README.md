@@ -96,6 +96,15 @@ to have the messenger open.
 
 see: https://developer.chrome.com/extensions/commands
 
+### Using desktopCapture to Get a Snapshot of the Screen
+
+`desktopCapture` allows you to capture the client's screen.
+
+![chrome-extension-capture-desktop](https://cloud.githubusercontent.com/assets/194400/11576119/7f2aa1ae-9a0c-11e5-8f61-f342b5f60448.png)
+
+see: examples/desktop_capture
+and: https://developer.chrome.com/extensions/desktopCapture
+
 <br />
 <br />
 
