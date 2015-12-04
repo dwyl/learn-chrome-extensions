@@ -105,6 +105,17 @@ see: https://developer.chrome.com/extensions/commands
 see: examples/desktop_capture
 and: https://developer.chrome.com/extensions/desktopCapture
 
+
+### Get the List of Signed in devices
+
+The `signedInDevices` API gives you a list of all the devices the
+person has signed into using their Google account:
+
+![chrome-devices](https://cloud.githubusercontent.com/assets/194400/11576561/6d0102e0-9a0f-11e5-94b7-e5d779b845f2.png)
+
+see: examples/my_devices
+API: https://developer.chrome.com/extensions/signedInDevices
+
 <br />
 <br />
 
