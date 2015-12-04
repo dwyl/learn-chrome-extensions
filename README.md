@@ -69,6 +69,33 @@ set of applications.
 
 see: https://developer.chrome.com/extensions/browsingData
 
+### Using Keyboad Shortcuts in your Extensions
+
+Using the `commands.onCommand` we can issue keyboard commands to trigger events in our extension.
+
+The commands are defined in the `manifest.json` file as:
+
+```js
+"commands": {
+  "toggle-feature": {
+    "suggested_key": { "default": "Ctrl+Shift+Y" },
+    "description": "Send a 'toggle-feature' event to the extension"
+  },
+  "_execute_browser_action": {
+    "suggested_key": {
+      "default": "Ctrl+Shift+F",
+      "mac": "MacCtrl+Shift+F"
+    }
+  }
+}
+```
+This can be useful for opening a background page (popup) to read content,
+e.g: imaging if your extension provided an instant messaging facility
+and you could see the latest messages from any page without needing
+to have the messenger open.
+
+see: https://developer.chrome.com/extensions/commands
+
 <br />
 <br />
 
