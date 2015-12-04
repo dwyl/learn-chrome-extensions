@@ -116,6 +116,21 @@ person has signed into using their Google account:
 see: examples/my_devices
 API: https://developer.chrome.com/extensions/signedInDevices
 
+
+### Event Page > Alarms
+
+> 'declarativeWebRequest' requires Google Chrome beta channel or newer, but this is the stable channel.
+
+
+See:
++ https://developer.chrome.com/extensions/event_pages
++ https://developer.chrome.com/extensions/alarms#method-create
+
+### History
+
+Get the page visit history:
+https://developer.chrome.com/extensions/history#method-getVisits
+
 <br />
 <br />
 
