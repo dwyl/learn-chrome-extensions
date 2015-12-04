@@ -5,19 +5,32 @@
 Chrome Extensions are a *whole other* ***world of opportunity***
 to build web-enabled tools!
 
+### Quick Facts
 
-## What?
-
-Almost ***53% of people*** use Chrome to access the Internet on desktop devices.
++ Almost ***53% of people use Chrome*** to access the Internet on desktop devices.
 see: http://gs.statcounter.com/#desktop-browser-ww-monthly-201506-201506-bar
-Chromebooks are the fastest growing segment of the PC market.
++ **Chromebooks** are the ***fastest growing*** segment of the PC market.
 In 2014 Chromebooks accounted for 14 percent of all laptop sales for both
 the commercial and retail channels; up 85 percent from 2013.
 http://betanews.com/2015/02/24/2015-is-year-of-the-chromebook/
+Chrome extensions can be build out to be full-blown apps that run in *every*
+chrome enviroment.
++ Because your Chrome Extensions are
+***written in Standard Web Technologies: HTML+CSS+JavaScript***
+you are able to re-use code your Web UI with minimal modification
+(*provided its already modular*).
+
+
+## What?
+
+Extensions are small programs that can modify and enhance the functionality
+of the Chrome browser. You write them using web standard web technologies
+(HTML, JavaScript, and CSS).
 
 Chrome Extensions (*or "Apps"*) allow you to create in-browser tools
 which add functionality to the browsing experience.
 In our case we want to let the person
+
 
 ## *How*?
 
@@ -116,11 +129,19 @@ person has signed into using their Google account:
 see: examples/my_devices
 API: https://developer.chrome.com/extensions/signedInDevices
 
+### Notifications!
+
+So you want to show people notifications in Chrome...?
+
+![chrome-ext-notifications](https://cloud.githubusercontent.com/assets/194400/11591150/8262ba6a-9a8d-11e5-8354-4fff6a3d54c0.png)
+
+see: examples/notifications for "toast" notifier.
+API: https://developer.chrome.com/apps/notifications
+
 
 ### Event Page > Alarms
 
-> 'declarativeWebRequest' requires Google Chrome beta channel or newer, but this is the stable channel.
-
+> 'declarativeWebRequest' requires Google Chrome beta channel or newer
 
 See:
 + https://developer.chrome.com/extensions/event_pages
@@ -130,6 +151,8 @@ See:
 
 Get the page visit history:
 https://developer.chrome.com/extensions/history#method-getVisits
+
+
 
 <br />
 <br />
@@ -197,3 +220,9 @@ https://www.google.co.uk/chrome/browser/privacy/whitepaper.html
 + So you want to build a chrome extension:
 https://blog.hartleybrody.com/chrome-extension/ (*BuzzKill example* by @hartleybrody)
 + What are Chrome Apps? https://developer.chrome.com/apps/about_apps (*they're awesome*!)
++ ***Package Chrome Apps for iOS & Android using Cordova***:
+https://github.com/MobileChromeApps/mobile-chrome-apps
+curious? see: [issues/598](https://github.com/MobileChromeApps/mobile-chrome-apps/issues/598)
++ Sadly, the Chrome Android team are not iplementing Chrome Extensions for Mobile.
+see: https://www.reddit.com/r/Android/comments/35v8gi/we_are_the_chrome_for_android_team_ama/cr8alzk
+(*probably because it would allow ad-blocking*...)
