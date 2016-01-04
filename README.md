@@ -1,50 +1,187 @@
-# learn-chrome-extensions
+# Learn How to Build Chrome Extensions
 
 ## Why?
 
 Chrome Extensions are a *whole other* ***world of opportunity***
 to build web-enabled tools!
 
+### Quick Facts
 
-### Background
-
-Yesterday at the
-[***Conservation Hackathon***](http://conservationhackathon.org)
-my *idea* was to build a Chrome Extension to help Scientists track the articles
-they have viewed and let other members of their team know that an article has
-already been reviewed thus reducing duplication of effort.
-While we *started* creating the extension during the Hackathon, see:
-https://github.com/ConsHack/article-search-chrome-plugin
-it rapidly became clear that we were *way* out of our comfort zone - despite
-the fact that extensions are built with "just" HTML, CSS & JavaScript ... -
-and would need to do a bit of *homework* if we are to attempt this sort
-of project again in the future.
-
-## What?
-
-Almost ***53% of people*** use Chrome to access the Internet on desktop devices.
++ Almost ***53% of people use Chrome*** to access the Internet on desktop devices.
 see: http://gs.statcounter.com/#desktop-browser-ww-monthly-201506-201506-bar
-Chromebooks are the fastest growing segment of the PC market.
++ **Chromebooks** are the ***fastest growing*** segment of the PC market.
 In 2014 Chromebooks accounted for 14 percent of all laptop sales for both
 the commercial and retail channels; up 85 percent from 2013.
 http://betanews.com/2015/02/24/2015-is-year-of-the-chromebook/
+Chrome extensions can be build out to be full-blown apps that run in *every*
+chrome enviroment.
++ Because your Chrome Extensions are
+***written in Standard Web Technologies: HTML+CSS+JavaScript***
+you are able to re-use code your Web UI with minimal modification
+(*provided its already modular*).
+
+
+## What?
+
+Extensions are small programs that can modify and enhance the functionality
+of the Chrome browser. You write them using web standard web technologies
+(HTML, JavaScript, and CSS).
 
 Chrome Extensions (*or "Apps"*) allow you to create in-browser tools
 which add functionality to the browsing experience.
 In our case we want to let the person
 
+
 ## *How*?
 
+
+## Permissions
+
++ What are the permissions? https://developer.chrome.com/extensions/permissions
+
+
+## *Examples*
+
+### Browser Action (When the person clicks on the Extension Icon)
+
+Browser Actions allow you to add an icon to the browser e.g:
+![browser action](https://developer.chrome.com/static/images/browser-action.png)
+See: https://developer.chrome.com/extensions/browserAction
+
+Example of a simple Browser Action is an icon which, when clicked
+alters the page background.
+See: examples/make_page_red
+
+### Display list of Bookmarks
+
+Uses the bookmarks API to show a list of the person's bookmarks
+when they click on the icon (`browser_action`)
+
+![chrome-extension-bookmarks-viewer](https://cloud.githubusercontent.com/assets/194400/11568030/e4a1eba8-99e1-11e5-83a3-cf7709a10ed0.png)
+
+See: examples/my_bookmarks
+
+### Change the `src` of Icon when clicked
+
+Imagine your app wants to change the icon in response to an event or a notification:
+That's quite easy with the following line:
+```js
+chrome.browserAction.setIcon({path:"icon-notification.png"});
+```
+
+see: examples/set_icon_path
+
+### Access Browser Data (*Delete History*)
+
+Use the `chrome.browsingData` API to remove browsing data from a user's local profile.
+
+![browsingdata_api](https://cloud.githubusercontent.com/assets/194400/11569180/62dc7956-99e8-11e5-8c1c-15be80af7590.png)
+
+The API only allows you to `erase` history, so its only useful for a *limited*
+set of applications.
+
+see: https://developer.chrome.com/extensions/browsingData
+
+### Using Keyboad Shortcuts in your Extensions
+
+Using the `commands.onCommand` we can issue keyboard commands to trigger events in our extension.
+
+The commands are defined in the `manifest.json` file as:
+
+```js
+"commands": {
+  "toggle-feature": {
+    "suggested_key": { "default": "Ctrl+Shift+Y" },
+    "description": "Send a 'toggle-feature' event to the extension"
+  },
+  "_execute_browser_action": {
+    "suggested_key": {
+      "default": "Ctrl+Shift+F",
+      "mac": "MacCtrl+Shift+F"
+    }
+  }
+}
+```
+This can be useful for opening a background page (popup) to read content,
+e.g: imaging if your extension provided an instant messaging facility
+and you could see the latest messages from any page without needing
+to have the messenger open.
+
+see: https://developer.chrome.com/extensions/commands
+
+### Using desktopCapture to Get a Snapshot of the Screen
+
+`desktopCapture` allows you to capture the client's screen.
+
+![chrome-extension-capture-desktop](https://cloud.githubusercontent.com/assets/194400/11576119/7f2aa1ae-9a0c-11e5-8f61-f342b5f60448.png)
+
+see: examples/desktop_capture
+and: https://developer.chrome.com/extensions/desktopCapture
+
+
+### Get the List of Signed in devices
+
+The `signedInDevices` API gives you a list of all the devices the
+person has signed into using their Google account:
+
+![chrome-devices](https://cloud.githubusercontent.com/assets/194400/11576561/6d0102e0-9a0f-11e5-94b7-e5d779b845f2.png)
+
+see: examples/my_devices
+API: https://developer.chrome.com/extensions/signedInDevices
+
+### Notifications!
+
+So you want to show people notifications in Chrome...?
+
+![chrome-ext-notifications](https://cloud.githubusercontent.com/assets/194400/11591150/8262ba6a-9a8d-11e5-8354-4fff6a3d54c0.png)
+
+see: examples/notifications for "toast" notifier.
+API: https://developer.chrome.com/apps/notifications
+
+
+### Event Page > Alarms
+
+> 'declarativeWebRequest' requires Google Chrome beta channel or newer
+
+See:
++ https://developer.chrome.com/extensions/event_pages
++ https://developer.chrome.com/extensions/alarms#method-create
+
+### History
+
+Get the page visit history:
+https://developer.chrome.com/extensions/history#method-getVisits
+
+
+
 <br />
 <br />
 
+## Questions?
+
+**Q**: Can we have ***both*** `page_action` ***and*** `browser_action` ?  
+**A**: No. But you can create multiple extensions and have them inter-communicate
+see: http://stackoverflow.com/questions/14519458/google-chrome-extension-browser-page-action
+and: https://developer.chrome.com/extensions/extension#event-onMessageExternal
+
+**Q**: How can we check when the Tab/Page has finished loading?  
+**A**: Add an event listener:
+```js
+chrome.tabs.onUpdated.addListener(function(tabId , info) {
+    if (info.status == "complete") {
+        // your code ...
+    }
+});
+```
+http://stackoverflow.com/questions/2149917/chrome-extensions-how-to-know-when-a-tab-has-finished-loading-from-the-backgr
 
 ## Background Reading / Watching
+
 
 ### Videos
 
 + Google Chrome Extensions: How to build an extension
-(Google Developers official):   
+(Google Developers official):
 https://www.youtube.com/watch?v=e3McMaHvlBY
 (from 2009 but all the info is still valid)
 + Building Your First Chrome Extension:
@@ -52,7 +189,8 @@ https://www.youtube.com/watch?v=pT-b2SpFIWo
 
 ### Guides
 
-+ Getting Started: Building a Chrome Extension: https://developer.chrome.com/extensions/getstarted
++ Getting Started: Building a Chrome Extension:
+https://developer.chrome.com/extensions/getstarted
 + How to Create a Chrome Extension in 10 Minutes Flat:
 http://www.sitepoint.com/create-chrome-extension-10-minutes-flat/
 + How to Build a Chrome Extension:
@@ -79,3 +217,12 @@ http://digiwonk.wonderhowto.com/how-to/your-chrome-extensions-may-be-stealing-yo
 http://www.howtogeek.com/180175/warning-your-browser-extensions-are-spying-on-you/
 + Google Chrome Privacy Whitepaper:
 https://www.google.co.uk/chrome/browser/privacy/whitepaper.html
++ So you want to build a chrome extension:
+https://blog.hartleybrody.com/chrome-extension/ (*BuzzKill example* by @hartleybrody)
++ What are Chrome Apps? https://developer.chrome.com/apps/about_apps (*they're awesome*!)
++ ***Package Chrome Apps for iOS & Android using Cordova***:
+https://github.com/MobileChromeApps/mobile-chrome-apps
+curious? see: [issues/598](https://github.com/MobileChromeApps/mobile-chrome-apps/issues/598)
++ Sadly, the Chrome Android team are not iplementing Chrome Extensions for Mobile.
+see: https://www.reddit.com/r/Android/comments/35v8gi/we_are_the_chrome_for_android_team_ama/cr8alzk
+(*probably because it would allow ad-blocking*...)
