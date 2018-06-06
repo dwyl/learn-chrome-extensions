@@ -178,7 +178,7 @@ http://stackoverflow.com/questions/2149917/chrome-extensions-how-to-know-when-a-
 ## Background Reading / Watching
 
 
-### Videos
+### Videos
 
 + Google Chrome Extensions: How to build an extension
 (Google Developers official):
@@ -187,7 +187,7 @@ https://www.youtube.com/watch?v=e3McMaHvlBY
 + Building Your First Chrome Extension:
 https://www.youtube.com/watch?v=pT-b2SpFIWo
 
-### Guides
+### Guides
 
 + Getting Started: Building a Chrome Extension:
 https://developer.chrome.com/extensions/getstarted
